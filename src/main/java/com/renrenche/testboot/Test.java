@@ -9,7 +9,7 @@ public class Test {
     @RequestMapping("/value")
     public String test(){
         System.out.println("test");
-        //返回字符串hello
+        //返回字符串hello 特殊他
         return "Hello";
     }
 }
