@@ -7,11 +7,12 @@ import lombok.Data;
  * @create 2021/1/14
  */
 @Data
-public class Node {
+public class Node<T> {
     Node next = null;
-    Object data;
+    Node pre = null;
+    T data;
 
-    public Node(Object data){
+    public Node(T data){
         this.data = data;
     }
 }
