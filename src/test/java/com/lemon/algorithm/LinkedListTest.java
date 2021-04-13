@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.LinkedList;
 
 
 /**
@@ -16,10 +17,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class LinkedListTest {
 
-    Node head = null;
 
+    /**
+     * 链表操作
+     * 链表添加，删除，遍历
+     */
     @Test
-    public void test() {
+    public void LinkedListTest() {
 
         SingleLinkedList singleLinkedList = new SingleLinkedList<String>();
         singleLinkedList.push("test1");
@@ -36,6 +40,6 @@ public class LinkedListTest {
             log.info("link node data:{}", temp.getData());
             temp = temp.getNext();
         }
-
     }
+
 }
