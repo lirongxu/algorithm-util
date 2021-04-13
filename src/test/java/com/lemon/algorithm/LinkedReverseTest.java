@@ -40,15 +40,13 @@ public class LinkedReverseTest {
         Node cur = head.next;
         while (cur.next != null) {
             Node tmp = cur.next;
-
-
+            cur.next = pre;
+            pre = cur;
             cur = tmp;
         }
-
-        Node node = reverseLinked(head.next);
-        head.next = node;
+        cur.next  = pre;
         head.next = null;
-        return node;
+        return cur;
     }
 }
 

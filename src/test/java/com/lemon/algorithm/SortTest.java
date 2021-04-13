@@ -1,12 +1,15 @@
 package com.lemon.algorithm;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import sun.rmi.runtime.Log;
 
 /**
  * @Author lemon
  * @Date 2021/4/13
  */
+@Slf4j
 @SpringBootTest
 public class SortTest {
 
@@ -16,7 +19,7 @@ public class SortTest {
     @Test
     public void sort(){
         int[] arr = {6,2,7,1,72,4,7};
-
+        log.info("排序后:{}", bubbleSort(arr));
     }
 
     /**
@@ -31,15 +34,14 @@ public class SortTest {
         int maxIndex = arr.length-1;
         for(int i=0; i<maxIndex; i++){
             for(int j=0; j<maxIndex-i; j++){
-                if(arr[j] < arr[i+1]){
-                    int temp = arr[i];
-                    arr[i] = arr[i+1];
-                    arr[i+1] = temp;
+                if(arr[j] < arr[j+1]){
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-
-        return null;
+        return arr;
     }
 
     /**
